@@ -83,6 +83,7 @@ class DomainAliasEnvironmentTest extends DomainTestBase {
     $this->drupalGet($domain->getPath());
     foreach ($domains as $domain) {
       $this->assertSession()->assertEscaped($domain->getHostname());
+      var_dump($domain->getHostname());
       $this->assertSession()->linkByHrefExists($domain->getPath(), 0, 'Link found');
     }
     // For an aliased request, the list should be aliased.
@@ -90,6 +91,7 @@ class DomainAliasEnvironmentTest extends DomainTestBase {
     $this->drupalGet($url);
     foreach ($matches as $match) {
       $this->assertSession()->assertEscaped($match->getPattern());
+      var_dump($domain->getHostname());
       $this->assertSession()->linkByHrefExists($domain->getScheme() . $match->getPattern(), 0, 'Link found');
     }
   }
