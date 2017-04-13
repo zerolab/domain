@@ -70,7 +70,7 @@ before_script:
   - ln -s $TESTDIR modules/domain
 
   - echo "test"
-  - echo -en "parameters:\n  renderer.config:\n    required_cache_contexts: ['languages:language_interface', 'theme', 'user.permissions', 'url.site']" > sites/default/services.yml
+  #- echo -en "parameters:\n  renderer.config:\n    required_cache_contexts: ['languages:language_interface', 'theme', 'user.permissions', 'url.site']" > sites/default/services.yml
 
   # Install drupal default profile
   - /usr/bin/env PHP_OPTIONS="-d sendmail_path=$(which true)" drush --yes --verbose site-install minimal --db-url=mysql://root:@127.0.0.1/domain
