@@ -69,6 +69,7 @@ before_script:
   # Make the module appear in the correct place
   - ln -s $TESTDIR modules/domain
 
+  - echo "test"
   - echo -en "parameters:\n  renderer.config:\n    required_cache_contexts: ['languages:language_interface', 'theme', 'user.permissions', 'url.site']" > sites/default/services.yml
 
   # Install drupal default profile
