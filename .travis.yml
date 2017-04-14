@@ -69,7 +69,7 @@ before_script:
   # Make the module appear in the correct place
   - ln -s $TESTDIR modules/domain
 
-  - sh setup.sh
+  - sh modules/domain/setup.sh
 
   # Install drupal default profile
   - /usr/bin/env PHP_OPTIONS="-d sendmail_path=$(which true)" drush --yes --verbose site-install minimal --db-url=mysql://root:@127.0.0.1/domain
